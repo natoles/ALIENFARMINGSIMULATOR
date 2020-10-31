@@ -7,12 +7,12 @@ public class calabouge : MonoBehaviour
     [Range(0, 0.1f)]
      public float vitesseDeplacement = 0.01f;
 
-    public Rigidbody2d corpsdelabouboule;
+    Rigidbody2D corpsdelabouboule;
 
     // Start is called before the first frame update
     void Start()
     {
-        corpsdelabouboule = GetComponent<RigidBody2d>();
+        corpsdelabouboule = GetComponent<RigidBody2D>();
     }
 
     // Update is called once per frame
