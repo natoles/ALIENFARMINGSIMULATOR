@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class calabouge : MonoBehaviour
 {
     [Range(0, 0.1f)]
      public float vitesseDeplacement = 0.01f;
