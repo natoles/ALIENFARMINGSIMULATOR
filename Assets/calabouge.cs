@@ -12,9 +12,13 @@ public class calabouge : MonoBehaviour
 
     Rigidbody2D corpsdelabouboule;
 
+    public GameObject texteCESTWIN;
+
     // Start is called before the first frame update
     void Start()
     {
+        texteCESTWIN.SetActive(false);
+
         corpsdelabouboule = GetComponent<Rigidbody2D>();
         hauteursaut = 450;
         vitesseDeplacement = 1;
@@ -43,4 +47,13 @@ public class calabouge : MonoBehaviour
         #endregion
     }
 
+   // ICI C'EST POUR SAVOIR SI ON TOUCHE L'ETOILES ET DONC QU'ON A GAGNE BISOUS
+    private void OnTriggerEnter2D(Collider2D catouche)
+    {
+        if (catouche.gameObject.name == "etoiles")
+        {
+           texteCESTWIN.SetActive(true);
+           Time.timeScale = 0;
+        }
+    }
 }
