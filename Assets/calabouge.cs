@@ -43,9 +43,4 @@ public class calabouge : MonoBehaviour
         #endregion
     }
 
-    // ICI C'EST POUR SAVOIR SI ON TOUCHE L'ETOILES ET DONC QU'ON A GAGNE BISOUS
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("BIENJOUE");
-    }
 }
