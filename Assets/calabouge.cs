@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class calabouge : MonoBehaviour
 {
-    [Range(0, 0.1f)]
-     public float vitesseDeplacement = 0.01f;
+    [Range(0.5f, 3)]
+     public float vitesseDeplacement = 1;
+    
+    [Range(150, 500)]
+     public float hauteursaut = 250;
 
     Rigidbody2D corpsdelabouboule;
 
@@ -13,6 +16,7 @@ public class calabouge : MonoBehaviour
     void Start()
     {
         corpsdelabouboule = GetComponent<Rigidbody2D>();
+        hauteursaut = 250;
     }
 
     // Update is called once per frame
@@ -22,24 +26,18 @@ public class calabouge : MonoBehaviour
         // GAUCHE DROITE
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //transform.position = new Vector3(transform.position.x - vitesseDeplacement, transform.position.y);
-            corpsdelabouboule.AddForce(new Vector2 (-1,0));
+            corpsdelabouboule.AddForce(new Vector2 (-vitesseDeplacement,0));
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(transform.position.x + vitesseDeplacement, transform.position.y);
+            corpsdelabouboule.AddForce(new Vector2 (vitesseDeplacement,0));
         }
 
         //HAUT BAS
-        if (Input.GetKey(KeyCode.UpArrow)) //HAUT
+        if (Input.GetKeyDown(KeyCode.UpArrow)) //HAUT
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + vitesseDeplacement);
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow)) //BAS
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y - vitesseDeplacement);
+            corpsdelabouboule.AddForce(new Vector2 (0,hauteursaut));
         }
         #endregion
     }
