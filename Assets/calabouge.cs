@@ -21,7 +21,7 @@ public class calabouge : MonoBehaviour
 
         corpsdelabouboule = GetComponent<Rigidbody2D>();
         hauteursaut = 450;
-        vitesseDeplacement = 1;
+        vitesseDeplacement = 2.1f;
     }
 
     // Update is called once per frame
